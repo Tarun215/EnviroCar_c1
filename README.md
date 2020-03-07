@@ -6,7 +6,7 @@ This is a react application powered by react-map-gl and deck.gl to visualise Env
 Visualised 13 tracks with color on the basis of their consumption data:
 
 * Hamm : 7 tracks
-* Chemnitz : 6 tracks
+* Chemnitz : 5 tracks
 * Bremen : 1 track
 
 ##### Working on wiring up city selector 
