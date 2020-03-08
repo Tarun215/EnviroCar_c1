@@ -1,13 +1,14 @@
-# EnviroCar_c1
+# EnviroCar_c1_consumption_data
 This is a react application powered by react-map-gl and deck.gl to visualise EnviroCar tracks data.
 
 ## Status
 
-Visualised 13 tracks with color on the basis of their consumption data:
+Visualised all 100 tracks, provided by EnviroCar API on calling "/tracks" route, with color on the basis of their consumption data.
 
-* Hamm : 7 tracks
-* Chemnitz : 5 tracks
-* Bremen : 1 track
+All tracks can be seen in and around:
+* Hamm
+* Chemnitz
+* Bremen
 
 ##### Working on wiring up city selector 
 
