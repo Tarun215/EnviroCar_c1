@@ -3,23 +3,17 @@ This is a react application powered by react-map-gl and deck.gl to visualise Env
 
 ## Status
 
-Visualised 13 tracks with color on the basis of their consumption data:
+Visualised all 100 tracks, with single color, provided by EnviroCar API on calling "/tracks" route
 
-* Hamm : 7 tracks
-* Chemnitz : 5 tracks
-* Bremen : 1 track
+All the tracks can be seen to be found in and around
 
-##### Working on wiring up city selector 
+* Hamm
+* Chemnitz
+* Bremen
 
 ### Color Scheme
 
-* [255, 0, 0] i.e. Red for consumption > 4 l/hr
-* [255, 128, 0] i.e. yellowish-orange for consumption between 3-4 l/hr
-* [255, 255, 0] i.e. yellow for consumption between 2-3 l/hr
-* [128, 255, 0] i.e. nearly light-green for consumption between 1-2 l/hr
-* [0, 255, 0] i.e. green for consumption < 1 l/hr<br />
-
-#### [0,0,255] i.e. blue for no consumption data
+#### [255,255,0] i.e. yellow for all tracks
 
 ## Available Scripts
 
