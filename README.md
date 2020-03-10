@@ -1,4 +1,4 @@
-# EnviroCar_c1_consumption_data
+# EnviroCar_c1
 This is a react application powered by react-map-gl and deck.gl to visualise EnviroCar tracks data.
 
 ## Status
