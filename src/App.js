@@ -7,6 +7,13 @@ import renderLayers from './utils/deckGlLayers';
 // refactored data
 import refConsumpData from './data/refactoredData/refConsumpData';
 
+// importing bar-chart 
+import Charts from './utils/charts';
+
+// importing city-selector
+import CitySelector from './utils/citySelector';
+import ColorScheme from './utils/colorScheme';
+
 // Using Refactored data to create final geojson file
 const final_data=refConsumpData
 
@@ -54,6 +61,9 @@ export default class App extends Component {
             mapboxApiAccessToken="pk.eyJ1IjoiYWxwaGEtMjEiLCJhIjoiY2s3YXJ0dmFkMTJiMTNlcGJzNzg4OGJnMSJ9.2m3wZ5wlJQKr0N0aldKSTA"
           />
         </DeckGL>
+        <Charts />
+        <CitySelector />
+        <ColorScheme />
       </div>
       </div>
     );
