@@ -3,15 +3,21 @@ import { StaticMap } from 'react-map-gl';
 import DeckGL from 'deck.gl';
 
 import renderLayers from './utils/deckGlLayers';
-import refData from './data/refactoredData/refData.js';
+
+// importing all-tracks data
+import refMunsterAllTracks from './data/refData/refMunsterAllTracks';
+
+// importing map-title, colorScheme and chart
+import MapTitle from './utils/mapTitle';
+import Charts from './utils/chart';
 
 // Using Refactored data to create final geojson file
-const final_data=refData
+const final_data=refMunsterAllTracks;
 
 // Initial viewport state
 const INITIAL_VIEW_STATE = {
-  longitude: 12.87,
-  latitude: 50.83,
+  longitude: 7.63,
+  latitude: 51.96,
   zoom: 12,
   minZoom: 2,
   maxZoom: 16,
@@ -20,30 +26,26 @@ const INITIAL_VIEW_STATE = {
 }
 
 // DeckGL layer
-const layer = renderLayers(final_data);
+// const layer = renderLayers(final_data);
 
 // App Component
 export default class App extends Component {
   state = {
     style: 'mapbox://styles/mapbox/dark-v10',
-    viewport: INITIAL_VIEW_STATE
+    viewport: INITIAL_VIEW_STATE,
+    highlightedMonth: ''
   }
 
-  onCityChange = city => {
-    console.log("city_viewport : ", city)
-    this.setState({viewport : city})
+  _onHighlight(highlightedMonth) {
+    this.setState({highlightedMonth});
   }
 
   render() {
     return (
       <div>
         <div>
-        {/* <CitySelector
-          onCityChange={this.onCityChange}
-          currentCity={this.state.viewport}
-        /> */}
         <DeckGL 
-          layers={[layer]}
+          layers={[renderLayers(final_data, this.state.highlightedMonth)]}
           initialViewState={this.state.viewport} 
           controller
         >
@@ -52,6 +54,8 @@ export default class App extends Component {
             mapboxApiAccessToken="pk.eyJ1IjoiYWxwaGEtMjEiLCJhIjoiY2s3YXJ0dmFkMTJiMTNlcGJzNzg4OGJnMSJ9.2m3wZ5wlJQKr0N0aldKSTA"
           />
         </DeckGL>
+        <MapTitle />
+        <Charts highlight={month => this._onHighlight(month)} highlightedMonth={this.state.highlightedMonth}/>
       </div>
       </div>
     );

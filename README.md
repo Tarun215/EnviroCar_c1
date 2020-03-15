@@ -1,19 +1,13 @@
-# EnviroCar_c1_all_tracks
+# EnviroCar_c1
 This is a react application powered by react-map-gl and deck.gl to visualise EnviroCar tracks data.
 
 ## Status
 
-Visualised all 100 tracks, with single color, provided by EnviroCar API on calling "/tracks" route
+Visualised all 100 tracks, provided by EnviroCar API on calling "/tracks" route using bbox for munster.
 
-All the tracks can be seen to be found in and around
+### Added bar chart and linked it with deck.gl layers
 
-* Hamm
-* Chemnitz
-* Bremen
-
-### Color Scheme
-
-#### [255,255,0] i.e. yellow for all tracks
+#### Do hover over bars in bar chart to see the interaction
 
 ## Available Scripts
 
