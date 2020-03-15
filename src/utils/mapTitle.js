@@ -8,12 +8,12 @@ const styles = {
       'ff-clan-web-pro, "Helvetica Neue", Helvetica, sans-serif !important',
     fontSize: '12px',
     lineHeight: 2,
-    height: 30,
+    height: 50,
     padding: '10px',
     position: 'absolute',
     left: 20,
     top: 20,
-    width: 400,
+    width: 500,
     zIndex: 100
   }
 
@@ -21,7 +21,7 @@ const styles = {
     return (
       <div style={styles}>
         <h4 style={{ marginTop:0 , marginBottom: 10}}>This map represents tracks from EnviroCar API for Munster</h4>
-        {/* <p style={{marginTop:5, marginBottom: 5}}>Colors as shown on top right</p> */}
+        <p style={{marginTop:5, marginBottom: 5}}>Please hover over the bars of chart to see the effect</p>
       </div>
     );
   }
