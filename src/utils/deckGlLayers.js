@@ -10,6 +10,7 @@ export default function renderLayers(data) {
         lineWidthMinPixels: 1,
         getLineColor: d => (d.properties.color || [255,255,0]),
         getLineWidth: 1,
+        opacity:0.15
         // onHover: ({object, x, y}) => {
         //   const tooltip = object.properties.id || object.properties.station;
         //   /* Update tooltip
