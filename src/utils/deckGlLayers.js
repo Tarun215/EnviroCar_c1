@@ -8,7 +8,7 @@ export default function renderLayers(data) {
         extruded: true,
         lineWidthScale: 10,
         lineWidthMinPixels: 1,
-        getLineColor: d => (d.properties.color),
+        getLineColor: d => (d.properties.color || [255,255,0]),
         getLineWidth: 1,
         // onHover: ({object, x, y}) => {
         //   const tooltip = object.properties.id || object.properties.station;

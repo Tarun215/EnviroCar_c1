@@ -3,14 +3,7 @@ This is a react application powered by react-map-gl and deck.gl to visualise Env
 
 ## Status
 
-Visualised all 100 tracks, provided by EnviroCar API on calling "/tracks" route, with color on the basis of their consumption data.
-
-All tracks can be seen in and around:
-* Hamm
-* Chemnitz
-* Bremen
-
-##### Working on wiring up city selector 
+Visualised all 100 tracks, provided by EnviroCar API on calling "/tracks" route using bbox for munster, with color on the basis of their consumption data.
 
 ### Color Scheme
 

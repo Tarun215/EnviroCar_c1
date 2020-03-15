@@ -4,23 +4,20 @@ import DeckGL from 'deck.gl';
 
 import renderLayers from './utils/deckGlLayers';
 
-// refactored data
-import refConsumpData from './data/refactoredData/refConsumpData';
-
-// importing bar-chart 
-import Charts from './utils/charts';
+// refactored consumption data
+import refConsDataMunster from './data/refactoredData/refConsDataMunster';
 
 // importing city-selector
-import CitySelector from './utils/citySelector';
+import MapTitle from './utils/mapTitle';
 import ColorScheme from './utils/colorScheme';
 
 // Using Refactored data to create final geojson file
-const final_data=refConsumpData
+const final_data=refConsDataMunster;
 
 // Initial viewport state
 const INITIAL_VIEW_STATE = {
-  longitude: 12.87,
-  latitude: 50.83,
+  longitude: 7.63,
+  latitude: 51.96,
   zoom: 12,
   minZoom: 2,
   maxZoom: 16,
@@ -38,19 +35,10 @@ export default class App extends Component {
     viewport: INITIAL_VIEW_STATE
   }
 
-  onCityChange = city => {
-    console.log("city_viewport : ", city)
-    this.setState({viewport : city})
-  }
-
   render() {
     return (
       <div>
         <div>
-        {/* <CitySelector
-          onCityChange={this.onCityChange}
-          currentCity={this.state.viewport}
-        /> */}
         <DeckGL 
           layers={[layer]}
           initialViewState={this.state.viewport} 
@@ -61,8 +49,7 @@ export default class App extends Component {
             mapboxApiAccessToken="pk.eyJ1IjoiYWxwaGEtMjEiLCJhIjoiY2s3YXJ0dmFkMTJiMTNlcGJzNzg4OGJnMSJ9.2m3wZ5wlJQKr0N0aldKSTA"
           />
         </DeckGL>
-        <Charts />
-        <CitySelector />
+        <MapTitle />
         <ColorScheme />
       </div>
       </div>
