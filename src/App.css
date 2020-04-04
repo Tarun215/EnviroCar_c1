@@ -1,0 +1,13 @@
+.app{
+    margin-top: 0;
+    /* background-color: bisque; */
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    color: #808080;
+}

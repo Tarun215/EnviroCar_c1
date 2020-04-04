@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
-import { StaticMap } from 'react-map-gl';
-import DeckGL from 'deck.gl';
 
-import renderLayers from './utils/deckGlLayers';
+import TimeAnimation from './components/TimeAnimation/TimeAnimation';
+import ConsumptionVisualization from './components/ConsumptionVisualization/ConsumptionVisualization';
+import BarChartVisualization from './components/BarChartVisualization/BarChartVisualization';
 
-// refactored consumption data
-import refConsDataMunster from './data/refactoredData/refConsDataMunster';
-
-// importing city-selector
-import MapTitle from './utils/mapTitle';
-import ColorScheme from './utils/colorScheme';
-
-// Using Refactored data to create final geojson file
-const final_data=refConsDataMunster;
+import './App.css';
 
 // Initial viewport state
 const INITIAL_VIEW_STATE = {
@@ -25,33 +17,42 @@ const INITIAL_VIEW_STATE = {
   bearing: 0
 }
 
-// DeckGL layer
-const layer = renderLayers(final_data);
-
 // App Component
 export default class App extends Component {
   state = {
     style: 'mapbox://styles/mapbox/dark-v10',
-    viewport: INITIAL_VIEW_STATE
+    viewport: INITIAL_VIEW_STATE,
   }
 
   render() {
     return (
-      <div>
+      <div className="app">
+        <div className="title">
+          <h1 className="center">EnviroCar tracks Visualization for munster bbox</h1>
+          <h3 className="center">(Please scroll down to see other visualizations)</h3>
+        </div>
         <div>
-        <DeckGL 
-          layers={[layer]}
-          initialViewState={this.state.viewport} 
-          controller
-        >
-          <StaticMap 
-            mapStyle={this.state.style}
-            mapboxApiAccessToken="pk.eyJ1IjoiYWxwaGEtMjEiLCJhIjoiY2s3YXJ0dmFkMTJiMTNlcGJzNzg4OGJnMSJ9.2m3wZ5wlJQKr0N0aldKSTA"
-          />
-        </DeckGL>
-        <MapTitle />
-        <ColorScheme />
-      </div>
+          <h2 className="center">All tracks Visualization with time animation</h2>
+        </div>
+        <div>
+            <TimeAnimation
+              style={this.state.style}
+              viewport={this.state.viewport}
+            />
+        </div>
+        <div>
+          <h2 className="center">All tracks Visualization with bar chart</h2>
+          <h3 className="center">Please hover over bars to see changes in deck layers</h3>
+        </div>
+        <div>
+          <BarChartVisualization viewport={this.state.viewport} style={this.state.style} />
+        </div>
+        <div>
+          <h2 className="center">Consumption Data Visualization</h2>
+        </div>
+        <div>
+          <ConsumptionVisualization viewport={this.state.viewport} style={this.state.style} />
+        </div>
       </div>
     );
   }

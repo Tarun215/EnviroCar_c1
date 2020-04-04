@@ -7,21 +7,22 @@ const styles = {
     fontFamily:
       'ff-clan-web-pro, "Helvetica Neue", Helvetica, sans-serif !important',
     fontSize: '12px',
-    lineHeight: 1.833,
-    height: 50,
+    lineHeight: 2,
+    height: 30,
     padding: '10px',
-    position: 'absolute',
+    position: 'relative',
     left: 20,
     top: 20,
-    width: 500,
+    width: 100,
     zIndex: 100
   }
 
-  export default function MapTitle() {
+  const MapTitle = ({ month }) => {
     return (
       <div style={styles}>
-        <h4 style={{ marginTop:0 , marginBottom: 10}}>This map represents consumption data for tracks from EnviroCar API</h4>
-        <p style={{marginTop:5, marginBottom: 5}}>Colors as shown on top right</p>
+        <h2 style={{ marginTop:0 , marginBottom: 10}}>{month}</h2>
       </div>
     );
   }
+
+  export default MapTitle;
