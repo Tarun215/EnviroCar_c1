@@ -1,9 +1,14 @@
 # EnviroCar_c1
-This is a react application powered by react-map-gl and deck.gl to visualise EnviroCar tracks data.
+This is a react application powered by react-map-gl and deck.gl to visualise EnviroCar tracks data.<br />
+This repo contains source code for EnviroCar animated tracks visualization code challenge.<br /><br />
+
+For live demonstration visit: [https://alpha-envirocar.herokuapp.com/](https://alpha-envirocar.herokuapp.com/).
 
 ## Status
 
-Visualised all 100 tracks, provided by EnviroCar API on calling "/tracks" route using bbox for munster, with color on the basis of their consumption data.
+* Created basic time-animation for certain dataset from EnviroCar API using bbox for Munster.
+* Added a Bar Chart based visualization for tracks of that dataset.
+* Visualised multiple tracks, with multiple colors on the basis of thier consumption data.
 
 ### Color Scheme
 
