@@ -1,25 +1,21 @@
-import React from 'react';
-import { StaticMap } from 'react-map-gl';
-import DeckGl, { PathLayer } from 'deck.gl';
+import { PathLayer } from '@deck.gl/layers';
 
-import ColorScheme from './components/ColorScheme';
-import munsterData from '../../data/refData/munsterData';
+const renderLayer = (data, highlightedMonth_num) => {
+    const filteredFeatures = !highlightedMonth_num ? data.features : data.features.filter(feature => {
+        const featureMonth = new Date(feature.properties.begin).getMonth();
+        return featureMonth === highlightedMonth_num - 1;
+    })
 
-const style = 'mapbox://styles/mapbox/dark-v10';
-const initialViewState = {
-    longitude: 7.63,
-    latitude: 51.96,
-    zoom: 12,
-    minZoom: 2,
-    maxZoom: 16,
-    pitch: 0,
-    bearing: 0
-  }
+    const filteredData = {
+        "type": "FeatureCollection",
+        "properties": {},
+        "features": filteredFeatures
+    }
 
 // Using JSON data to convert to BINARY
 
 // Extracting required data from JSON data
-const PATH_DATA = munsterData.features.map(feature => {
+const PATH_DATA = filteredData.features.map(feature => {
     const path = feature.geometry.coordinates;
     const color = feature.consumption.map(consumption => {
       if (consumption === -1)
@@ -47,7 +43,6 @@ const startIndices = new Uint16Array(PATH_DATA.reduce((acc, d) => {
   }, [0]));
 
 // Using BINARY to create deck PathLayer
-const renderLayer = () => {
     return new PathLayer({
     id: 'path-layer',
     data: {
@@ -61,29 +56,8 @@ const renderLayer = () => {
     pickable: true,
     widthScale: 10,
     widthMinPixels: 1,
-    opacity: 0.1
-})}
-
-const ConsPathVisualization = () => {
-    return (
-    <div>
-        <DeckGl
-            style={{
-                position:'relative',
-                height: 850
-            }}
-            layers={[renderLayer()]}
-            initialViewState={initialViewState}
-            controller
-        >
-            <StaticMap
-                mapStyle={style}
-                mapboxApiAccessToken="pk.eyJ1IjoiYWxwaGEtMjEiLCJhIjoiY2s3YXJ0dmFkMTJiMTNlcGJzNzg4OGJnMSJ9.2m3wZ5wlJQKr0N0aldKSTA"
-            />
-            <ColorScheme />
-        </DeckGl>
-    </div>
-    );
+    opacity: 0.15
+});
 }
 
-export default ConsPathVisualization;
+export default renderLayer;

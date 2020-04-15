@@ -4,6 +4,8 @@ import TimeAnimation from './components/TimeAnimation/TimeAnimation';
 import ConsumptionVisualization from './components/ConsumptionVisualization/ConsumptionVisualization';
 import BarChartVisualization from './components/BarChartVisualization/BarChartVisualization';
 import ConsPathVisualization from './components/ConsPathVisualization/ConsPathVisualization';
+import ConsTimeAnimation from './components/ConsTimeAnimation/ConsTimeAnimation';
+import AvgConsTimeAnimation from './components/AvgConsTimeAnimation/AvgConsTimeAnimation';
 import './App.css';
 
 // Initial viewport state
@@ -58,6 +60,20 @@ export default class App extends Component {
         </div>
         <div>
           <ConsPathVisualization />
+        </div>
+        <div>
+          <h2 className="center">Consumption Data Visualization with Time Animation</h2>
+          <h3 className="center">Color Scheme is same as above visualizations.</h3>
+        </div>
+        <div>
+          <ConsTimeAnimation viewport={this.state.viewport} style={this.state.style} />
+        </div>
+        <div>
+          <h2 className="center">Consumption Data Visualization with Time Animation</h2>
+          <h3 className="center">Color Scheme is same as above visualizations.</h3>
+        </div>
+        <div>
+          <AvgConsTimeAnimation viewport={this.state.viewport} style={this.state.style} />
         </div>
       </div>
     );
