@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import TimeAnimation from './components/TimeAnimation/TimeAnimation';
 import ConsumptionVisualization from './components/ConsumptionVisualization/ConsumptionVisualization';
 import BarChartVisualization from './components/BarChartVisualization/BarChartVisualization';
-
+import ConsPathVisualization from './components/ConsPathVisualization/ConsPathVisualization';
 import './App.css';
 
 // Initial viewport state
@@ -48,10 +48,16 @@ export default class App extends Component {
           <BarChartVisualization viewport={this.state.viewport} style={this.state.style} />
         </div>
         <div>
-          <h2 className="center">Consumption Data Visualization</h2>
+          <h2 className="center">Consumption Data Visualization (using old GeoJSON Layer)</h2>
         </div>
         <div>
           <ConsumptionVisualization viewport={this.state.viewport} style={this.state.style} />
+        </div>
+        <div>
+          <h2 className="center">Consumption Data Visualization using PathLayer</h2>
+        </div>
+        <div>
+          <ConsPathVisualization />
         </div>
       </div>
     );

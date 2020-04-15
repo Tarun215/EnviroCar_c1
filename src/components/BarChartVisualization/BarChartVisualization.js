@@ -3,7 +3,7 @@ import { StaticMap } from 'react-map-gl';
 import DeckGL from 'deck.gl';
 
 import Charts from './components/Charts';
-import refMunsterAllTracks from '../../data/refData/refMunsterAllTracks';
+import munsterData from '../../data/refData/munsterData';
 import renderLayer from './utils/renderLayer';
 
 class BarChartVisualization extends React.Component {
@@ -26,7 +26,7 @@ class BarChartVisualization extends React.Component {
             <div>
                 <DeckGL
                   style={{ position: 'relative', height: 850 }}
-                  layers={[renderLayer(refMunsterAllTracks, highlightedMonth)]}
+                  layers={[renderLayer(munsterData, highlightedMonth)]}
                   initialViewState={viewport}
                   controller
                 >

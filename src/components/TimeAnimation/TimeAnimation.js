@@ -3,7 +3,7 @@ import { StaticMap } from 'react-map-gl';
 import DeckGL from 'deck.gl';
 
 import MapTitle from './components/MapTitle';
-import refMunsterAllTracks from '../../data/refData/refMunsterAllTracks';
+import munsterData from '../../data/refData/munsterData';
 import RenderLayer from './utils/RenderLayer';
 
 
@@ -46,7 +46,7 @@ class TimeAnimation extends React.Component {
             <div>
                 <DeckGL
                   style={{ position:'relative', height: 800}}
-                  layers={[RenderLayer(refMunsterAllTracks, highlightedMonth_num)]}
+                  layers={[RenderLayer(munsterData, highlightedMonth_num)]}
                   initialViewState={viewport}
                   controller
                 >
