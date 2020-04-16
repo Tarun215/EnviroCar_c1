@@ -3,7 +3,7 @@ import { StaticMap } from 'react-map-gl';
 import DeckGL from 'deck.gl';
 
 import ColorScheme from './utils/ColorScheme';
-import refConsDataMunster from '../../data/refactoredPropData/refConsDataMunster';
+import refConsDataMunster from '../../data/refConsDataMunster';
 import renderLayer from './utils/renderLayer';
 
 export default function ConsumptionVisualization({viewport, style}) {

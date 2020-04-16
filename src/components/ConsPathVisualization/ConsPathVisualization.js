@@ -3,7 +3,7 @@ import { StaticMap } from 'react-map-gl';
 import DeckGl, { PathLayer } from 'deck.gl';
 
 import ColorScheme from './components/ColorScheme';
-import munsterData from '../../data/refData/munsterData';
+import munsterData from '../../data/munsterData';
 
 const style = 'mapbox://styles/mapbox/dark-v10';
 const initialViewState = {

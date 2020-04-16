@@ -3,7 +3,7 @@ import { StaticMap } from 'react-map-gl';
 import DeckGL from 'deck.gl';
 
 import Charts from './components/Charts';
-import munsterData from '../../data/refData/munsterData';
+import munsterData from '../../data/munsterData';
 import renderLayer from './utils/renderLayer';
 
 class BarChartVisualization extends React.Component {

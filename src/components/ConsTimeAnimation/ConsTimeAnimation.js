@@ -3,7 +3,7 @@ import { StaticMap } from 'react-map-gl';
 import DeckGL from 'deck.gl';
 
 import MapTitle from './components/MapTitle';
-import munsterData from '../../data/refData/munsterData';
+import munsterData from '../../data/munsterData';
 import RenderLayer from './utils/RenderLayer';
 
 
