@@ -69,7 +69,7 @@ export default class App extends Component {
           <ConsTimeAnimation viewport={this.state.viewport} style={this.state.style} />
         </div>
         <div>
-          <h2 className="center">Consumption Data Visualization with Time Animation</h2>
+          <h2 className="center">Average Consumption per Track Visualization with Time Animation</h2>
           <h3 className="center">Color Scheme is same as above visualizations.</h3>
         </div>
         <div>

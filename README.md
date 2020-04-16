@@ -8,9 +8,12 @@ For live demonstration visit: [https://alpha-envirocar.herokuapp.com/](https://a
 
 * Created basic time-animation for certain dataset from EnviroCar API using bbox for Munster.
 * Added a Bar Chart based visualization for tracks of that dataset.
-* Visualised multiple tracks, with multiple colors on the basis of thier consumption data.
+* Visualised multiple tracks, with multiple colors on the basis of thier consumption data (using GeoJSON Layer)
+* Visualized COnsumption data using PathLayer, which requires uses same munsterData.js file as used for all tracks viualization. So, no other data file required unlike old GeoJSON layer)
+* Consumption data Time animation.
+* Average Consumption per Track time animation.
 
-### Color Scheme
+### Color Scheme (for Consumption Visualization)
 
 * [255, 0, 0] i.e. Red for consumption > 4 l/hr
 * [255, 128, 0] i.e. yellowish-orange for consumption between 3-4 l/hr
