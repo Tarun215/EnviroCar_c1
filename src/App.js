@@ -32,6 +32,7 @@ export default class App extends Component {
         <div className="title">
           <h1 className="center">EnviroCar tracks Visualization for munster bbox</h1>
           <h3 className="center">(Please scroll down to see other visualizations)</h3>
+          <h3 className="center updates">(**New Visualizations added, please check them out)</h3>
         </div>
         <div>
           <h2 className="center">All tracks Visualization with time animation</h2>
@@ -53,10 +54,12 @@ export default class App extends Component {
           <h2 className="center">Consumption Data Visualization (using old GeoJSON Layer)</h2>
         </div>
         <div>
+          <h3 className="center warning">(**Using refactored tracks consumption data, so will need different data file for each phenomenon visualizations, hence won't use it in final project)</h3>
           <ConsumptionVisualization viewport={this.state.viewport} style={this.state.style} />
         </div>
         <div>
           <h2 className="center">Consumption Data Visualization using PathLayer</h2>
+          <h3 className="center updates">(**Using refactored tracks data which will act as single data source for all visualizations. Please check source code : <a href="https://github.com/Tarun215/EnviroCar_c1">https://github.com/Tarun215/EnviroCar_c1</a>)</h3>
         </div>
         <div>
           <ConsPathVisualization />
